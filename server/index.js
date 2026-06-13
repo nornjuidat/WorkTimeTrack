@@ -28,7 +28,7 @@ global.GenObj_Mid = require("./Middleware/GenObj_Mid");
 
 const main_api_R = require("./Router/main_api_R");
 
-app.use("/Api", main_api_R);
+app.use("/api", main_api_R);
 
 
 app.listen(port, () => {            //server starts listening for any attempts from a client to connect at port: {port}
