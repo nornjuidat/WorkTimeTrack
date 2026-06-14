@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 import { createBrowserRouter } from "react-router-dom";
 
-import MainLayout from "../Layout/MainLayout";
-import EntryPage from "../_Features/EnterPage/Enter";
-import ExitPage from "../_Features/ExitPage/Exit";
-import RecordsPage from "../_Features/ShowList.jsx/Show";
+import MainLayout from "../Layout/AppLayout";
+import EntryPage from "../_Features/EnterPage/EntryPage";
+import ExitPage from "../_Features/ExitPage/ExitPage";
+import RecordsPage from "../_Features/RecordPage/RecordsPage";
 
 const appRouter = createBrowserRouter([
   {
@@ -24,17 +24,17 @@ import EventNoteIcon from "@mui/icons-material/EventNote";
 export const menuItems = [
   {
     path: "/",
-    title: "Check In",
+    title: "Entery",
     icon: <LoginIcon />,
   },
   {
     path: "/exit",
-    title: "Check Out",
+    title: "Exity",
     icon: <LogoutIcon />,
   },
   {
     path: "/records",
-    title: "Attendance Records",
+    title: "Records",
     icon: <EventNoteIcon />,
   },
 ];
