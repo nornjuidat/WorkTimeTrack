@@ -1,97 +1,68 @@
 import { createTheme } from '@mui/material';
 
-const FontSizeMultiplier = 1.4;
-const menuWidth = 240;
-const HeaderHeight = 80;
-const FooterHeight = 60;
-const black="#000000";
+const FontSizeMultiplier = 1.25;
+const menuWidth = 200;
+const HeaderHeight = 70;
+const FooterHeight = 50;
+const black = "#000000";
 
-const HeaderBgColor = "#111820";
-const HeaderTxtColor = "#ffffff"; 
+const HeaderBgColor = "#2563eb";
+const HeaderTxtColor = "#ffffff";
 
-const FooterBgColor = "#111820";
-const FooterTxtColor = "#ffffff"; 
+const FooterBgColor = "#1e293b";
+const FooterTxtColor = "#ffffff";
 
-const PrimaryBgColor = "#2F80ED";
+const PrimaryBgColor = "#2563eb";
+const SecondaryBgColor = "#64748b";
 
-const SecondaryBgColor = "#1B232C";
+const NavBgColor = "#ffffff";
+const NavTxtColor = "#1e293b";
 
-const NavBgColor = "#151C24";
-const NavTxtColor = "#ffffff";
+const NavHoverBgColor = "#e0f2fe";
+const NavHoverTxtColor = "#2563eb";
 
-const NavHoverBgColor = "#263442";
-const NavHoverTxtColor = "#ffffff";
-
-const NavSelectedBgColor = "#2F80ED";
+const NavSelectedBgColor = "#2563eb";
 const NavSelectedTxtColor = "#ffffff";
 
-const BtnPrimaryColor = "#2F80ED";
-const BtnPrimaryColorHover = "#1C64C8";
+const BtnPrimaryColor = "#2563eb";
+const BtnPrimaryColorHover = "#1d4ed8";
 
-const BtnPrimaryContainedHoverBg = "rgba(47, 128, 237, 0.12)";
+const BtnPrimaryContainedHoverBg = "rgba(37, 99, 235, 0.12)";
 
-const BtnRedColor = "#D94C5C";
-const BtnRedColorHover = "#B23A48";
+const BtnRedColor = "#ef4444";
+const BtnRedColorHover = "#dc2626";
 
-const TableHeaderBgColor = "#111820";
+const TableHeaderBgColor = "#2563eb";
 const TableHeaderTxtColor = "#ffffff";
 
-const TableEvenRowColor = "#CBD5E1";
+const TableEvenRowColor = "#f1f5f9";
 
-// Create a custom theme
 const theme = createTheme({
     direction: 'rtl',
     typography: {
-        // Scale all typography variants by the multiplier
-        fontSize: 14 * FontSizeMultiplier, // Base font size
-        h1: {
-            fontSize: `${2.5 * FontSizeMultiplier}rem`,
-        },
-        h2: {
-            fontSize: `${2 * FontSizeMultiplier}rem`,
-        },
-        h3: {
-            fontSize: `${1.75 * FontSizeMultiplier}rem`,
-        },
-        h4: {
-            fontSize: `${1.5 * FontSizeMultiplier}rem`,
-        },
-        h5: {
-            fontSize: `${1.25 * FontSizeMultiplier}rem`,
-        },
-        h6: {
-            fontSize: `${1.1 * FontSizeMultiplier}rem`,
-        },
-        body1: {
-            fontSize: `${1 * FontSizeMultiplier}rem`,
-        },
-        body2: {
-            fontSize: `${0.875 * FontSizeMultiplier}rem`,
-        },
-        button: {
-            fontSize: `${0.875 * FontSizeMultiplier}rem`,
-        },
-        caption: {
-            fontSize: `${0.75 * FontSizeMultiplier}rem`,
-        },
-        overline: {
-            fontSize: `${0.75 * FontSizeMultiplier}rem`,
-        },
+        fontSize: 14 * FontSizeMultiplier,
+        h1: { fontSize: `${2.5 * FontSizeMultiplier}rem` },
+        h2: { fontSize: `${2 * FontSizeMultiplier}rem` },
+        h3: { fontSize: `${1.75 * FontSizeMultiplier}rem` },
+        h4: { fontSize: `${1.5 * FontSizeMultiplier}rem` },
+        h5: { fontSize: `${1.25 * FontSizeMultiplier}rem` },
+        h6: { fontSize: `${1.1 * FontSizeMultiplier}rem` },
+        body1: { fontSize: `${1 * FontSizeMultiplier}rem` },
+        body2: { fontSize: `${0.875 * FontSizeMultiplier}rem` },
+        button: { fontSize: `${0.875 * FontSizeMultiplier}rem` },
+        caption: { fontSize: `${0.75 * FontSizeMultiplier}rem` },
+        overline: { fontSize: `${0.75 * FontSizeMultiplier}rem` },
     },
     palette: {
-        primary: {
-            main: PrimaryBgColor,
-        },
-        secondary: {
-            main: SecondaryBgColor,
-        },
-        // Add custom colors to the theme
+        primary: { main: PrimaryBgColor },
+        secondary: { main: SecondaryBgColor },
         background: {
+            default: "#f8fafc",
+            paper: "#ffffff",
             header: HeaderBgColor,
             footer: FooterBgColor,
             nav: NavBgColor
         },
-        // Navigation-specific colors
         nav: {
             main: NavBgColor,
             text: NavTxtColor,
@@ -105,36 +76,41 @@ const theme = createTheme({
             }
         }
     },
-    // You can also create custom components styling
     components: {
-        // For the AppBar component (usually used for headers)
         MuiAppBar: {
             styleOverrides: {
                 root: {
                     backgroundColor: HeaderBgColor,
-                    color: HeaderTxtColor 
+                    color: HeaderTxtColor,
+                    boxShadow: "0 4px 14px rgba(37, 99, 235, 0.25)"
                 }
             }
         },
-        // For the Paper component (which can be used for footers)
         MuiPaper: {
+            styleOverrides: {
+                root: {
+                    borderRadius: "16px",
+                }
+            },
             variants: [
                 {
                     props: { variant: 'footer' },
                     style: {
                         backgroundColor: FooterBgColor,
-                        color: FooterTxtColor 
+                        color: FooterTxtColor,
+                        borderRadius: 0
                     }
                 }
             ]
         },
-        
-        // For navigation items (using List and ListItem components)
         MuiListItem: {
             styleOverrides: {
                 root: {
                     backgroundColor: NavBgColor,
                     color: NavTxtColor,
+                    borderRadius: "12px",
+                    margin: "6px 10px",
+                    width: "calc(100% - 20px)",
                     '&:hover': {
                         backgroundColor: NavHoverBgColor,
                         color: NavHoverTxtColor,
@@ -143,14 +119,13 @@ const theme = createTheme({
                         backgroundColor: NavSelectedBgColor,
                         color: NavSelectedTxtColor,
                         '&:hover': {
-                            backgroundColor: NavHoverBgColor,
-                            color: NavHoverTxtColor,
+                            backgroundColor: NavSelectedBgColor,
+                            color: NavSelectedTxtColor,
                         }
                     }
                 }
             }
         },
-        // Add these to your components section
         MuiListItemIcon: {
             styleOverrides: {
                 root: {
@@ -167,33 +142,26 @@ const theme = createTheme({
         },
         MuiButton: {
             styleOverrides: {
-                // Style all primary variant buttons
                 root: {
-                    textTransform: 'none', // Optional: removes all-caps from buttons
+                    textTransform: 'none',
+                    borderRadius: "12px",
+                    padding: "8px 22px",
+                    fontWeight: 600,
                 },
-                primary: {
-                    backgroundColor: BtnPrimaryColor, // Use your predefined button color
-                    color: '#FFFFFF', // Text color for the button
-                    '&:hover': {
-                        backgroundColor: BtnPrimaryColorHover, // Slightly darker shade for hover state
-                    },
-                },
-                // Style contained variant buttons
                 contained: {
-                    boxShadow: '0 3px 5px 2px rgba(0, 0, 0, .1)',
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, .12)',
                     '&:hover': {
-                        boxShadow: '0 5px 8px 2px rgba(0, 0, 0, .2)',
+                        boxShadow: '0 6px 16px rgba(0, 0, 0, .18)',
                     },
                 },
             },
             variants: [
-                // You can also define custom button variants
                 {
                     props: { variant: 'contained', color: 'primary' },
                     style: {
                         backgroundColor: BtnPrimaryColor,
                         '&:hover': {
-                            backgroundColor: BtnPrimaryColorHover, // Darker shade for hover
+                            backgroundColor: BtnPrimaryColorHover,
                         },
                     },
                 },
@@ -208,13 +176,12 @@ const theme = createTheme({
                         },
                     },
                 },
-                // You can also add a custom "danger" button variant
                 {
                     props: { variant: 'contained', color: 'danger' },
                     style: {
                         backgroundColor: BtnRedColor,
                         '&:hover': {
-                            backgroundColor: BtnRedColorHover, // Slightly darker shade of BtnRedColor
+                            backgroundColor: BtnRedColorHover,
                         },
                     },
                 },
@@ -222,16 +189,14 @@ const theme = createTheme({
         },
         MuiIconButton: {
             styleOverrides: {
-                // Base styles for all IconButtons
                 root: {
-                    // You can add common styles here
                     padding: 8,
+                    borderRadius: "12px",
 
-                    // Style for different color variants
                     '&.MuiIconButton-colorPrimary': {
                         color: BtnPrimaryColor,
                         '&:hover': {
-                            backgroundColor: `${BtnPrimaryColor}20`, // 20 is hex for 12% opacity
+                            backgroundColor: `${BtnPrimaryColor}20`,
                         },
                     },
                     '&.MuiIconButton-colorSecondary': {
@@ -255,7 +220,6 @@ const theme = createTheme({
                 },
             },
             variants: [
-                // You can also define custom IconButton variants
                 {
                     props: { variant: 'contained', color: 'primary' },
                     style: {
@@ -290,7 +254,7 @@ const theme = createTheme({
                     },
                 },
                 {
-                    props: {  color: 'danger' },
+                    props: { color: 'danger' },
                     style: {
                         color: BtnRedColor,
                         '&:hover': {
@@ -313,8 +277,16 @@ const theme = createTheme({
                 },
             ],
         },
-
-        // Table Header Cells
+        MuiTextField: {
+            styleOverrides: {
+                root: {
+                    '& .MuiOutlinedInput-root': {
+                        borderRadius: "14px",
+                        backgroundColor: "#ffffff",
+                    }
+                }
+            }
+        },
         MuiTableHead: {
             styleOverrides: {
                 root: {
@@ -325,37 +297,30 @@ const theme = createTheme({
         },
         MuiTableCell: {
             styleOverrides: {
-                // Style for all table cells
                 root: {
-                    padding: '5px',
+                    padding: '8px',
                     fontSize: `${1 * FontSizeMultiplier}rem`,
                 },
-                // Style for header cells
                 head: {
                     backgroundColor: TableHeaderBgColor,
                     color: TableHeaderTxtColor,
                     fontWeight: 'bold',
                     fontSize: `${1.1 * FontSizeMultiplier}rem`,
                 },
-                // Style for body cells
                 body: {
                     fontSize: `${1 * FontSizeMultiplier}rem`,
                 },
             },
         },
-        // Table Rows
         MuiTableRow: {
             styleOverrides: {
-                // Style for all rows
                 root: {
-                    // Style for even rows in the table body
                     '&:nth-of-type(even)': {
-                        backgroundColor: TableEvenRowColor, // Use your even row color
+                        backgroundColor: TableEvenRowColor,
                     },
-                    // Add hover effect
-                    // '&:hover': {
-                    //     backgroundColor: 'rgba(0, 0, 0, 0.04)',
-                    // },
+                    '&:hover': {
+                        backgroundColor: "#e0f2fe",
+                    },
                 },
             },
         },
